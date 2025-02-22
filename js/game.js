@@ -158,7 +158,7 @@ function handleKeyPress(event) {
       // 命中处理
       board[lastRow][column] = 0;
       increaseScore(gameConfig.points.hit);
-      // playSound("clear");
+      playSound("tap");
       updateStats(true);
 
       // 检查是否需要下落
@@ -168,7 +168,7 @@ function handleKeyPress(event) {
     } else {
       // 未命中处理
       increaseScore(gameConfig.points.miss);
-      // playSound("error");
+      playSound("error");
       updateStats(false);
     }
 
@@ -207,7 +207,7 @@ function updateHistory(stats, finalScore) {
 function endGame() {
   gameOver = true;
   stopTimer();
-  // playSound("gameOver");
+  playSound("gameOver");
 
   const stats = getFinalStats();
   const finalScore = getScore();

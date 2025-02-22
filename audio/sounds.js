@@ -1,8 +1,7 @@
 const sounds = {
-  spawn: new Audio("audio/spawn.mp3"),
-  clear: new Audio("audio/clear.mp3"),
-  error: new Audio("audio/error.mp3"),
-  gameOver: new Audio("audio/game-over.mp3"),
+  tap: new Audio("../audio/tap.mp3"),
+  error: new Audio("../audio/err.mp3"),
+  gameOver: new Audio("../audio/end.mp3"),
 };
 
 function playSound(soundName) {
