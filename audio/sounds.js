@@ -1,7 +1,7 @@
 const sounds = {
-  tap: new Audio("../audio/tap.mp3"),
-  error: new Audio("../audio/err.mp3"),
-  gameOver: new Audio("../audio/end.mp3"),
+  tap: new Audio("/piano-typing-game/audio/tap.mp3"),
+  error: new Audio("/piano-typing-game/audio/err.mp3"),
+  gameOver: new Audio("/piano-typing-game/audio/end.mp3"),
 };
 
 function playSound(soundName) {

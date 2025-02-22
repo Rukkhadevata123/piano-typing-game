@@ -107,6 +107,9 @@ function initGame() {
   renderBoard();
   startTimer(gameConfig.initialDuration);
   document.getElementById("game-over").style.display = "none";
+  
+  // 添加加载完成标记
+  document.getElementById("game-container").classList.add("loaded");
 }
 
 /**
