@@ -11,7 +11,7 @@
 
 ## 📌 技术栈
 
-- [Vite](https://vitejs.dev/) - 现代前端构建工具
+- [Vite](https://vitejs.dev/) 现代前端构建工具
 - JavaScript (ES6+) 面向对象编程
 - HTML5 + CSS3 响应式设计
 - LocalStorage 数据持久化
@@ -58,26 +58,41 @@
   - 动态难度调整
   - 自适应方块生成
 
+### 📱 移动端使用说明
+
+为了获得最佳游戏体验:
+
+- 请将设备横屏使用
+- 推荐使用平板等较大屏幕设备
+- 竖屏状态下会显示横屏提示
+
 ## 📦 项目结构
 
 ```plaintext
 piano-typing-game/
-├── src/
-│   ├── js/
-│   │   ├── Game/           # 游戏核心逻辑
-│   │   ├── core/          # 核心功能模块
-│   │   ├── handlers/      # 事件处理器
+├── public/                 # 静态资源
+│   └── audio/             # 音效资源
+├── src/                   # 源代码目录
+│   ├── js/               # JavaScript 文件
+│   │   ├── Game/         # 游戏核心逻辑
+│   │   ├── core/         # 核心功能模块
+│   │   ├── handlers/     # 事件处理器
 │   │   ├── ui/           # UI 相关组件
 │   │   ├── utils/        # 工具函数
-│   │   └── config/       # 游戏配置
-│   ├── css/
+│   │   ├── config/       # 游戏配置
+│   │   └── main.js       # JS入口文件
+│   ├── css/              # 样式文件
 │   │   ├── components/   # 组件样式
 │   │   ├── layout/       # 布局样式
-│   │   └── utils/        # 样式工具
-│   └── audio/            # 音效资源
-├── public/               # 静态资源
-├── dist/                # 构建输出目录
-└── package.json         # 项目配置
+│   │   ├── utils/        # 样式工具
+│   │   └── style.css     # CSS入口文件
+├── dist/                  # 构建输出目录
+├── index.html            # 入口HTML文件
+├── vite.config.js        # Vite配置文件
+├── package.json          # 项目配置文件
+├── .eslintrc.js         # ESLint配置
+├── .prettierrc          # Prettier配置
+└── LICENSE              # MIT许可证
 ```
 
 ## 🚀 快速开始
@@ -100,13 +115,19 @@ npm run dev
 
 # 构建生产版本
 npm run build
+
+# 使用ESLint检查代码
+npm run lint
+
+# 格式化代码
+npm run format
 ```
 
 ## 📝 未来计划
 
 - [ ] 自定义键位映射系统
 - [ ] 完整的游戏设置界面
-- [ ] 优化加载动画效果
+- [ ] 优化消除动画效果
 - [ ] 实现多难度等级
 - [ ] 添加在线排行榜
 - [ ] 支持 PWA 离线使用
@@ -117,7 +138,7 @@ npm run build
 
 - 移动端适配尚不完善
 - 部分浏览器可能存在兼容性问题
-- 历史记录偶尔会重复记录
+- 可能有未发现的潜在 Bug
 
 ## 🤝 参与贡献
 
@@ -133,9 +154,11 @@ MIT © [Rukkhadevata123](https://github.com/Rukkhadevata123/)
 
 ## 🙏 鸣谢
 
+- Claude 3.5 Sonnet 帮助提供了大量代码
 - 感谢所有为项目提供反馈和建议的用户
 - 使用 [Vite](https://vitejs.dev/) 构建工具
 - 开源协议遵循 MIT 许可
+- 使用的音效来自于[arcxingye的EatKano项目](https://github.com/arcxingye/EatKano)
 
 ---
 *注：本项目仍在持续开发中，欢迎提供建议和反馈！*
