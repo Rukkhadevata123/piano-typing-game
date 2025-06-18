@@ -1,0 +1,29 @@
+/**
+ * 主样式文件 - 清理后的导入顺序
+ */
+
+/* 工具类 - 优先加载 */
+@import '@css/utils/variables.css';
+@import '@css/utils/animations.css';
+
+/* 布局样式 */
+@import '@css/layout/base.css';
+@import '@css/layout/responsive.css';
+
+/* 基础组件 */
+@import '@css/components/card.css';
+@import '@css/components/buttons.css';
+
+/* 游戏组件 */
+@import '@css/components/board.css';
+@import '@css/components/stats.css';
+@import '@css/components/score.css';
+@import '@css/components/notifications.css';
+@import '@css/components/rating.css';
+@import '@css/components/gameover.css';
+@import '@css/components/history.css';
+
+/* 系统组件 */
+@import '@css/components/loading.css';
+@import '@css/components/error.css';
+@import '@css/components/footer.css';

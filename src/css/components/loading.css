@@ -1,0 +1,40 @@
+/**
+ * 加载状态样式
+ * 包含：加载遮罩、旋转动画
+ */
+
+/* 加载容器 */
+.loading-container {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-index-overlay);
+    background: var(--overlay-background);
+
+    /* 布局 */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* 显示状态 */
+.loading-container.active {
+    display: flex;
+}
+
+/* 加载动画 */
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--secondary-color);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* 加载文本 */
+.loading-text {
+    margin-top: var(--spacing);
+    color: white;
+    font-size: var(--font-size-large);
+}

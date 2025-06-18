@@ -1,0 +1,161 @@
+/**
+ * 游戏结束弹窗样式
+ */
+
+/* === 游戏结束遮罩层 === */
+#game-over,
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: calc(var(--z-index-overlay) + 100);
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    
+    /* 确保弹性布局居中 */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    
+    /* 动画 */
+    opacity: 0;
+    transition: opacity var(--duration-normal) ease;
+}
+
+#game-over.show,
+.overlay.show {
+    display: flex !important;
+    opacity: 1;
+}
+
+/* === 其余样式保持不变 === */
+.game-over-content {
+    background: var(--container-background);
+    color: var(--text-color);
+    padding: var(--spacing-large);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-medium);
+    border: 1px solid var(--border-color);
+    
+    width: 90%;
+    max-width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+    
+    margin: auto;
+    position: relative;
+    
+    /* 动画 */
+    transform: scale(0.9) translateY(20px);
+    transition: all var(--duration-normal) ease;
+}
+
+#game-over.show .game-over-content {
+    transform: scale(1) translateY(0);
+}
+
+/* === 标题样式 === */
+.game-over-content h2 {
+    margin: 0 0 var(--spacing-large) 0;
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-align: center;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: var(--spacing);
+}
+
+/* === 统计数据容器 === */
+#final-stats {
+    margin: 0;
+}
+
+#final-stats p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 var(--spacing) 0;
+    padding: var(--spacing) 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: var(--font-size-base);
+    color: var(--text-color);
+}
+
+#final-stats p:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+/* === 统计数值样式 === */
+#final-stats span {
+    font-weight: 700;
+    font-size: 1.1em;
+    color: var(--primary-color);
+}
+
+/* === 等级分结果容器 === */
+.rating-result {
+    margin: var(--spacing-large) 0 0 0;
+    padding: var(--spacing);
+    background: rgba(52, 152, 219, 0.1);
+    border: 1px solid rgba(52, 152, 219, 0.2);
+    border-radius: var(--border-radius);
+}
+
+.rating-result p {
+    margin: var(--spacing-small) 0;
+    font-size: var(--font-size-base);
+    color: var(--text-color);
+    border-bottom: none !important;
+    padding: var(--spacing-small) 0;
+}
+
+.rating-result span {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* === 新最佳记录 === */
+#new-best-container {
+    margin-top: var(--spacing);
+    padding: var(--spacing);
+    background: linear-gradient(135deg, var(--success), #27ae60);
+    color: white;
+    border-radius: var(--border-radius);
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(39, 174, 96, 0.3);
+}
+
+.new-best {
+    font-size: 1.1em;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* === 操作提示 === */
+.game-over-content::after {
+    content: "按空格键重新开始";
+    display: block;
+    text-align: center;
+    margin-top: var(--spacing-large);
+    font-size: var(--font-size-small);
+    color: var(--text-light);
+    opacity: 0.8;
+    font-style: italic;
+}
+
+/* === 响应式适配 === */
+@media (max-width: 768px) {
+    .game-over-content {
+        width: 95%;
+        padding: var(--spacing);
+        margin: var(--spacing-small);
+    }
+    
+    .game-over-content h2 {
+        font-size: 1.5em;
+    }
+    
+    #final-stats p {
+        font-size: var(--font-size-small);
+    }
+}

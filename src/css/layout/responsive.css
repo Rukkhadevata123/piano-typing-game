@@ -1,0 +1,93 @@
+/**
+ * 响应式布局 - 容器覆盖问题
+ */
+
+/* 超大屏幕：增大侧边栏 */
+@media (min-width: 1400px) {
+    #game-container {
+        grid-template-columns: 280px 1fr 280px;
+        max-width: 1300px;
+    }
+}
+
+/* 大屏幕：标准三列布局 */
+@media (min-width: 1200px) and (max-width: 1399px) {
+    #game-container {
+        grid-template-columns: 250px 1fr 250px;
+        max-width: 1200px;
+    }
+}
+
+/* 中等屏幕：保持三列但减小侧边栏 */
+@media (min-width: 1000px) and (max-width: 1199px) {
+    #game-container {
+        grid-template-columns: 220px 1fr 220px;
+        max-width: 1000px;
+        width: 98%;
+    }
+}
+
+/* 小屏幕：切换为两列布局 */
+@media (max-width: 999px) {
+    #game-container {
+        grid-template-areas: 
+            "header header"
+            "board board"
+            "stats info";
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-small);
+        min-width: auto; /* 移除最小宽度限制 */
+        width: 95%;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* 移动端：单列布局 */
+@media (max-width: 768px) {
+    #game-container {
+        grid-template-areas: 
+            "header"
+            "board"
+            "stats"
+            "info";
+        grid-template-columns: 1fr;
+        width: 95%;
+        padding: var(--spacing);
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 极小屏幕 */
+@media (max-width: 480px) {
+    #game-container {
+        width: 98%;
+        padding: var(--spacing-small);
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 横屏优化 */
+@media (max-height: 600px) and (orientation: landscape) {
+    #game-container {
+        grid-template-areas:
+            "header header header"
+            "stats board info";
+        grid-template-columns: 180px 1fr 180px;
+        max-height: 90vh;
+        overflow: hidden;
+        width: 98%;
+    }
+
+    .history-card {
+        max-height: 120px;
+    }
+}

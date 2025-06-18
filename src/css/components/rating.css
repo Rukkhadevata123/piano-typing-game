@@ -1,0 +1,289 @@
+/**
+ * 等级分系统样式
+ */
+
+/* === 模态框样式 - 对应UIManager.js中的modal === */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: calc(var(--z-index-overlay) + 50);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity var(--duration-normal) ease;
+}
+
+.modal-overlay.show {
+    opacity: 1;
+}
+
+.modal-overlay.closing {
+    opacity: 0;
+    transition: opacity var(--duration-normal) ease;
+}
+
+.modal-overlay.closing .rating-details-modal {
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: all var(--duration-normal) ease;
+}
+
+.rating-details-modal {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 24px;
+    width: 90%;
+    max-width: 700px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-medium);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    transform: translateY(0);
+    opacity: 1;
+    transition: all var(--duration-normal) ease;
+}
+
+/* === 等级分详情内容样式 === */
+.current-rating {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin: var(--spacing) 0;
+    padding: var(--spacing);
+    background: var(--background-color);
+    border-radius: var(--border-radius);
+    border-left: 3px solid var(--primary-color);
+}
+
+.current-rating span {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.level-badge {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: var(--spacing-small);
+    font-size: 0.9em;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+/* === 等级分记录表格 === */
+.rating-records-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: var(--spacing);
+    font-size: 0.9em;
+}
+
+.rating-records-table th,
+.rating-records-table td {
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.rating-records-table th {
+    background-color: var(--background-color);
+    font-weight: 600;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.rating-records-table tr:hover {
+    background-color: rgba(52, 152, 219, 0.05);
+}
+
+.rating-records-table tr.focus-mode-record {
+    background-color: rgba(231, 76, 60, 0.05);
+}
+
+.rating-records-table td:nth-child(2) {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.focus-mode-tag {
+    background-color: var(--error-color);
+    color: white;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-size: 0.75em;
+    margin-left: 4px;
+}
+
+/* === 段位变化动画 === */
+.level-change-animation {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: calc(var(--z-index-overlay) + 100);
+    opacity: 0;
+    pointer-events: none;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.level-change-animation.show {
+    animation: levelChange 3s ease-in-out forwards;
+}
+
+.level-change-animation::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+}
+
+.level-change-content {
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--text-color);
+    padding: var(--spacing-large);
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow-medium);
+    border: 1px solid var(--border-color);
+    min-width: 300px;
+    max-width: 400px;
+}
+
+.level-change-title {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: var(--spacing);
+    color: var(--text-color);
+}
+
+.level-change-from,
+.level-change-to {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin: var(--spacing-small) 0;
+}
+
+.level-change-arrow {
+    font-size: 1.5em;
+    margin: var(--spacing-small) 0;
+    color: var(--text-light);
+}
+
+/* === 等级显示 === */
+#rating-level {
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 6px;
+    display: inline-block;
+    cursor: help;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all var(--duration-normal) ease;
+}
+
+/* === 等级提示框 === */
+.level-tooltip-global {
+    position: fixed;
+    z-index: calc(var(--z-index-tooltip));
+    width: 280px;
+    background: white;
+    color: var(--text-color);
+    padding: var(--spacing);
+    border-radius: var(--border-radius);
+    font-size: 0.9em;
+    box-shadow: var(--shadow-medium);
+    border: 1px solid var(--border-color);
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--duration-fast) ease;
+}
+
+.level-tooltip-global.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.level-tooltip-title {
+    font-weight: 600;
+    margin-bottom: var(--spacing-small);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: var(--spacing-small);
+    text-align: center;
+    color: var(--text-color);
+}
+
+.level-tooltip-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.level-tooltip-item:hover {
+    background-color: var(--background-color);
+}
+
+.level-tooltip-item:last-child {
+    border-bottom: none;
+}
+
+.level-tooltip-item span:nth-child(2) {
+    font-weight: 500;
+}
+
+.level-tooltip-item span:last-child {
+    color: var(--text-light);
+    font-size: 0.85em;
+    font-family: monospace;
+}
+
+/* === 按钮容器 === */
+.rating-button-container {
+    display: flex;
+    gap: var(--spacing);
+    justify-content: center;
+    margin-top: var(--spacing-large);
+}
+
+.modal-button {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-small);
+    padding: var(--spacing-small) var(--spacing);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--duration-fast) ease;
+}
+
+.export-button {
+    background: var(--primary-color);
+    color: white;
+}
+
+.export-button:hover {
+    background: var(--secondary-color);
+}
+
+.close-button {
+    background: var(--border-color);
+    color: var(--text-color);
+}
+
+.close-button:hover {
+    background: var(--text-light);
+    color: white;
+}
