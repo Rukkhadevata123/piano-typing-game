@@ -1,130 +1,145 @@
 <!doctype html>
 <html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
-  <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="一个基于键盘按键的音游模拟游戏" />
+    <title>🎹 6K音游模拟器</title>
+    <script type="module" crossorigin src="/piano-typing-game/assets/index-Bbb8M02p.js"></script>
+    <link rel="stylesheet" crossorigin href="/piano-typing-game/assets/index-DnunY5v_.css">
+  </head>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="一个基于键盘按键的音游模拟游戏" />
-  <title>🎹 6K音游模拟器</title>
-  <script type="module" crossorigin src="/piano-typing-game/assets/index-DlLvnNJG.js"></script>
-  <link rel="stylesheet" crossorigin href="/piano-typing-game/assets/index-DnunY5v_.css">
-</head>
+  <body>
+    <!-- 游戏主容器 - 新的三列布局 -->
+    <div id="game-container">
+      <!-- 头部区域 -->
+      <header>
+        <h1>🎹 6K音游模拟器</h1>
+        <div class="key-guide">
+          按键说明:
+          <span class="key">A</span><span class="key">S</span
+          ><span class="key">D</span> / <span class="key">J</span
+          ><span class="key">K</span><span class="key">L</span>
+          <br />
+          <span class="theme-hint">
+            <span class="key">T:</span>主题 <span class="key">Q:</span>时间
+            <span class="key">R:</span>模式 <span class="key">F:</span>专注
+          </span>
+        </div>
+      </header>
 
-<body>
-  <!-- 游戏主容器 - 新的三列布局 -->
-  <div id="game-container">
-    <!-- 头部区域 -->
-    <header>
-      <h1>🎹 6K音游模拟器</h1>
-      <div class="key-guide">
-        按键说明:
-        <span class="key">A</span><span class="key">S</span><span class="key">D</span> /
-        <span class="key">J</span><span class="key">K</span><span class="key">L</span>
-        <br>
-        <span class="theme-hint">
-          <span class="key">T:</span>主题 <span class="key">Q:</span>时间
-          <span class="key">R:</span>模式 <span class="key">F:</span>专注
-        </span>
+      <!-- 游戏区域 - 新的三列网格布局 -->
+      <div class="game-area">
+        <!-- 左侧：统计信息卡片化 -->
+        <aside class="game-stats">
+          <div class="stats-grid">
+            <div class="stat-card" data-stat="score">
+              <span class="stat-value">0</span>
+              <span class="stat-label">分数</span>
+            </div>
+            <div class="stat-card" data-stat="timer">
+              <span class="stat-value">60s</span>
+              <span class="stat-label">时间</span>
+            </div>
+            <div class="stat-card" data-stat="combo">
+              <span class="stat-value">0</span>
+              <span class="stat-label">连击</span>
+            </div>
+            <div class="stat-card" data-stat="accuracy">
+              <span class="stat-value">100%</span>
+              <span class="stat-label">准确率</span>
+            </div>
+            <div class="stat-card" data-stat="cps">
+              <span class="stat-value">0.0</span>
+              <span class="stat-label">CPS</span>
+            </div>
+            <div class="stat-card" data-stat="mode">
+              <span class="stat-value">整行</span>
+              <span class="stat-label">模式</span>
+            </div>
+          </div>
+        </aside>
+
+        <!-- 中间：游戏板 -->
+        <main id="game-board"></main>
+
+        <!-- 右侧：等级信息和控制 -->
+        <aside class="game-info">
+          <div class="info-card rating-card">
+            <h3>等级信息</h3>
+            <div id="player-rating">
+              等级分: 0.0
+              <button id="rating-details-button" title="查看等级分详情">
+                ⓘ
+              </button>
+            </div>
+            <div id="rating-level">青铜等级</div>
+          </div>
+
+          <div class="info-card history-card">
+            <h3>历史记录</h3>
+            <div id="history-stats" class="history-stats">
+              <!-- 历史记录将在这里动态插入 -->
+            </div>
+          </div>
+
+          <div class="controls-card">
+            <button id="restart-button" class="btn btn-primary btn-large">
+              重新开始 <span class="key-hint">[空格]</span>
+            </button>
+          </div>
+        </aside>
       </div>
-    </header>
 
-    <!-- 游戏区域 - 新的三列网格布局 -->
-    <div class="game-area">
-      <!-- 左侧：统计信息卡片化 -->
-      <aside class="game-stats">
-        <div class="stats-grid">
-          <div class="stat-card" data-stat="score">
-            <span class="stat-value">0</span>
-            <span class="stat-label">分数</span>
-          </div>
-          <div class="stat-card" data-stat="timer">
-            <span class="stat-value">60s</span>
-            <span class="stat-label">时间</span>
-          </div>
-          <div class="stat-card" data-stat="combo">
-            <span class="stat-value">0</span>
-            <span class="stat-label">连击</span>
-          </div>
-          <div class="stat-card" data-stat="accuracy">
-            <span class="stat-value">100%</span>
-            <span class="stat-label">准确率</span>
-          </div>
-          <div class="stat-card" data-stat="cps">
-            <span class="stat-value">0.0</span>
-            <span class="stat-label">CPS</span>
-          </div>
-          <div class="stat-card" data-stat="mode">
-            <span class="stat-value">整行</span>
-            <span class="stat-label">模式</span>
-          </div>
-        </div>
-      </aside>
-
-      <!-- 中间：游戏板 -->
-      <main id="game-board"></main>
-
-      <!-- 右侧：等级信息和控制 -->
-      <aside class="game-info">
-        <div class="info-card rating-card">
-          <h3>等级信息</h3>
-          <div id="player-rating">
-            等级分: 0.0
-            <button id="rating-details-button" title="查看等级分详情">ⓘ</button>
-          </div>
-          <div id="rating-level">青铜等级</div>
-        </div>
-
-        <div class="info-card history-card">
-          <h3>历史记录</h3>
-          <div id="history-stats" class="history-stats">
-            <!-- 历史记录将在这里动态插入 -->
-          </div>
-        </div>
-
-        <div class="controls-card">
-          <button id="restart-button" class="btn btn-primary btn-large">
-            重新开始 <span class="key-hint">[空格]</span>
-          </button>
-        </div>
-      </aside>
+      <!-- 连击里程碑容器 -->
+      <div
+        id="combo-milestone-container"
+        class="combo-milestone-container"
+      ></div>
     </div>
 
-    <!-- 连击里程碑容器 -->
-    <div id="combo-milestone-container" class="combo-milestone-container"></div>
-  </div>
-
-  <!-- 游戏结束弹窗 -->
-  <div id="game-over" class="overlay">
-    <div class="game-over-content">
-      <h2>游戏结束</h2>
-      <div id="final-stats">
-        <p>游戏时长: <span id="final-duration">0</span></p>
-        <p>最终得分: <span id="final-score">0</span></p>
-        <p>最大连击: <span id="final-max-combo">0</span></p>
-        <p>准确率: <span id="final-accuracy">0%</span></p>
-        <p>平均CPS: <span id="final-cps">0</span></p>
-        <div id="rating-container" class="rating-result" style="display:none;">
-          <p>本局等级分: <span id="game-rating">0.0</span></p>
-          <p>当前等级分: <span id="current-rating">0.0</span></p>
-          <p id="new-best-container" style="display:none;">
-            <span class="new-best">新的最佳记录</span>
-          </p>
+    <!-- 游戏结束弹窗 -->
+    <div id="game-over" class="overlay">
+      <div class="game-over-content">
+        <h2>游戏结束</h2>
+        <div id="final-stats">
+          <p>游戏时长: <span id="final-duration">0</span></p>
+          <p>最终得分: <span id="final-score">0</span></p>
+          <p>最大连击: <span id="final-max-combo">0</span></p>
+          <p>准确率: <span id="final-accuracy">0%</span></p>
+          <p>平均CPS: <span id="final-cps">0</span></p>
+          <div
+            id="rating-container"
+            class="rating-result"
+            style="display: none"
+          >
+            <p>本局等级分: <span id="game-rating">0.0</span></p>
+            <p>当前等级分: <span id="current-rating">0.0</span></p>
+            <p id="new-best-container" style="display: none">
+              <span class="new-best">新的最佳记录</span>
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="loading-container" id="loading">
-    <div class="loading-spinner"></div>
-    <div class="loading-text">加载中...</div>
-  </div>
-  <div id="error-container"></div>
-  <footer class="game-footer">
-    <a href="https://github.com/Rukkhadevata123/piano-typing-game-dev" target="_blank" rel="noopener noreferrer">
-      <img src="https://img.shields.io/badge/GitHub-查看源码-black?style=flat-square&logo=github" alt="GitHub repository">
-    </a>
-  </footer>
-</body>
-
+    <div class="loading-container" id="loading">
+      <div class="loading-spinner"></div>
+      <div class="loading-text">加载中...</div>
+    </div>
+    <div id="error-container"></div>
+    <footer class="game-footer">
+      <a
+        href="https://github.com/Rukkhadevata123/piano-typing-game-dev"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="https://img.shields.io/badge/GitHub-查看源码-black?style=flat-square&logo=github"
+          alt="GitHub repository"
+        />
+      </a>
+    </footer>
+  </body>
 </html>
