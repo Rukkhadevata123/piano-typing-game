@@ -1,5 +1,5 @@
 /**
- * 游戏主控制器 - 整合GameController和GameEngine的功能
+ * 游戏主控制器
  */
 import { Board } from './Board.js';
 import { GameModes } from './GameModes.js';
@@ -355,6 +355,7 @@ export class Game {
       canSwitchSettings: () => this.canSwitchSettings(),
     };
   }
+
   isGameRunning() {
     return this.isPlaying && !this.gameOver;
   }
@@ -366,6 +367,7 @@ export class Game {
   getTimeLeft() {
     return this.timeLeft;
   }
+
   cleanup() {
     this.stopTimer();
     this.statsManager.stopPlaying();

@@ -1,72 +1,67 @@
 /**
- * 全局CSS变量定义 - 紧凑尺寸版本
+ * 全局CSS变量定义
  */
 
 :root {
-    /* === 核心尺寸系统 === */
-    --cell-size: 60px;
-    /* 保持合适的点击尺寸 */
-    --grid-gap: 5px;
-    --border-radius: 8px;
-    --max-width: 1100px;
-    /* 大幅减小最大宽度 */
+  /* === 核心尺寸系统 === */
+  --cell-size: 60px;
+  --grid-gap: 5px;
+  --border-radius: 8px;
+  --max-width: 1100px;
 
-    /* === 间距系统 === */
-    --spacing-small: 8px;
-    /* 减小 */
-    --spacing: 16px;
-    /* 减小 */
-    --spacing-large: 24px;
-    /* 减小 */
+  /* === 间距系统 === */
+  --spacing-small: 8px;
+  --spacing: 16px;
+  --spacing-large: 24px;
 
-    /* === 主色彩系统 === */
-    --primary-color: #3498db;
-    --secondary-color: #2980b9;
-    --cell-color: #3498db;
-    --error-color: #e74c3c;
-    --success: #27ae60;
-    --accent: #f39c12;
+  /* === 主色彩系统 === */
+  --primary-color: #3498db;
+  --secondary-color: #2980b9;
+  --cell-color: #3498db;
+  --error-color: #e74c3c;
+  --success: #27ae60;
+  --accent: #f39c12;
 
-    /* === 背景色系统 === */
-    --background-color: #f0f0f0;
-    --container-background: rgba(255, 255, 255, 0.95);
-    --board-background: rgba(238, 238, 238, 0.9);
-    --overlay-background: rgba(0, 0, 0, 0.8);
+  /* === 背景色系统 === */
+  --background-color: #f0f0f0;
+  --container-background: rgba(255, 255, 255, 0.95);
+  --board-background: rgba(238, 238, 238, 0.9);
+  --overlay-background: rgba(0, 0, 0, 0.8);
 
-    /* === 文字和边框 === */
-    --text-color: #333;
-    --text-light: #666;
-    --border-color: #ddd;
+  /* === 文字和边框 === */
+  --text-color: #333;
+  --text-light: #666;
+  --border-color: #ddd;
 
-    /* === 阴影系统 === */
-    --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
-    --shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.15);
+  /* === 阴影系统 === */
+  --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.15);
 
-    /* === 字体系统 === */
-    --font-family: "Arial", sans-serif;
-    --font-size-small: 0.9em;
-    --font-size-base: 1em;
-    --font-size-large: 1.2em;
+  /* === 字体系统 === */
+  --font-family: 'Arial', sans-serif;
+  --font-size-small: 0.9em;
+  --font-size-base: 1em;
+  --font-size-large: 1.2em;
 
-    /* === 动画系统 === */
-    --animation-speed: 0.3s;
-    --animation-timing: ease-in-out;
-    --duration-fast: 0.2s;
-    --duration-normal: 0.3s;
-    --duration-slow: 0.5s;
-    --text-muted: #999999;
+  /* === 动画系统 === */
+  --animation-speed: 0.3s;
+  --animation-timing: ease-in-out;
+  --duration-fast: 0.2s;
+  --duration-normal: 0.3s;
+  --duration-slow: 0.5s;
+  --text-muted: #999999;
 
-    /* === 层级系统完善 === */
-    --z-index-base: 10;       /* 添加基础层级变量 */
-    --z-index-dropdown: 100;
-    --z-index-sticky: 200;
-    --z-index-overlay: 400;  /* 添加覆盖层层级变量 */
-    --z-index-modal: 500;
-    --z-index-notification: 800;
-    --z-index-tooltip: 900;
-    --z-index-priority: 1000;
+  /* === 层级系统 === */
+  --z-index-base: 10;
+  --z-index-dropdown: 100;
+  --z-index-sticky: 200;
+  --z-index-overlay: 400;
+  --z-index-modal: 500;
+  --z-index-notification: 800;
+  --z-index-tooltip: 900;
+  --z-index-priority: 1000;
 
-    /* === 响应式断点 === */
-    --bp-mobile: 768px;
-    --bp-tablet: 1024px;
+  /* === 响应式断点 === */
+  --bp-mobile: 768px;
+  --bp-tablet: 1024px;
 }

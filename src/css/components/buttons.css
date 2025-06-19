@@ -3,181 +3,183 @@
  * 包含：按键指南、重启按钮、模态框按钮
  */
 
-/* === 按键指南保持不变 === */
+/* === 按键指南 === */
 .key-guide {
-    margin: var(--spacing) 0;
-    font-size: var(--font-size-large);
-    color: var(--text-color);
+  margin: var(--spacing) 0;
+  font-size: var(--font-size-large);
+  color: var(--text-color);
 }
 
 .theme-hint {
-    display: block;
-    margin-top: var(--spacing-small);
-    font-size: var(--font-size-small);
-    color: var(--text-color);
-    opacity: 0.8;
+  display: block;
+  margin-top: var(--spacing-small);
+  font-size: var(--font-size-small);
+  color: var(--text-color);
+  opacity: 0.8;
 }
 
 .key {
-    display: inline-block;
-    padding: 4px 8px;
-    margin: 0 2px;
-    background-color: var(--background-color);
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    font-family: monospace;
-    font-weight: bold;
-    box-shadow: var(--shadow-light);
+  display: inline-block;
+  padding: 4px 8px;
+  margin: 0 2px;
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-family: monospace;
+  font-weight: bold;
+  box-shadow: var(--shadow-light);
 }
 
 /* === 基础按钮样式 === */
 .btn-base {
-    border: none;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: all var(--duration-fast) ease;
-    font-family: var(--font-family), sans-serif;
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all var(--duration-fast) ease;
+  font-family: var(--font-family), sans-serif;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 /* === 重启按钮 === */
 #restart-button {
-    /* 继承基础样式 */
-    border: none;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: all var(--duration-fast) ease;
-    font-family: var(--font-family), sans-serif;
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
+  /* 继承基础样式 */
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all var(--duration-fast) ease;
+  font-family: var(--font-family), sans-serif;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 
-    /* 特定样式 */
-    margin-top: var(--spacing);
-    width: 100%;
-    padding: var(--spacing) var(--spacing-large);
-    font-size: var(--font-size-large);
-    background: var(--primary-color);
-    color: white;
-    box-shadow: var(--shadow-medium);
-    z-index: calc(var(--z-index-overlay) + 1);
+  /* 特定样式 */
+  margin-top: var(--spacing);
+  width: 100%;
+  padding: var(--spacing) var(--spacing-large);
+  font-size: var(--font-size-large);
+  background: var(--primary-color);
+  color: white;
+  box-shadow: var(--shadow-medium);
+  z-index: calc(var(--z-index-overlay) + 1);
 }
 
 #restart-button:hover:not(:disabled) {
-    background: var(--secondary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 #restart-button:active:not(:disabled) {
-    transform: translateY(0);
-    box-shadow: var(--shadow-light);
+  transform: translateY(0);
+  box-shadow: var(--shadow-light);
 }
 
 #restart-button:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .key-hint {
-    opacity: 0.9;
-    font-size: 0.9em;
-    font-weight: normal;
-    margin-left: 6px;
-    background-color: rgba(255, 255, 255, 0.08);
-    padding: 1px 4px;
-    border-radius: 2px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    transition: all var(--duration-fast) ease;
+  opacity: 0.9;
+  font-size: 0.9em;
+  font-weight: normal;
+  margin-left: 6px;
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 1px 4px;
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all var(--duration-fast) ease;
 }
 
 #restart-button:hover .key-hint {
-    background-color: rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 /* === 等级分详情弹窗按钮 === */
 .rating-button-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-    gap: 15px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap: 15px;
 }
 
 .modal-button {
-    /* 继承基础样式 */
-    border: none;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: all var(--duration-fast) ease;
-    font-family: var(--font-family), sans-serif;
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
+  /* 继承基础样式 */
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all var(--duration-fast) ease;
+  font-family: var(--font-family), sans-serif;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 
-    /* 特定样式 */
-    flex: 1;
-    height: 42px;
-    padding: 0 20px;
-    font-size: 15px;
+  /* 特定样式 */
+  flex: 1;
+  height: 42px;
+  padding: 0 20px;
+  font-size: 15px;
 }
 
 .export-button {
-    background: var(--primary-color);
-    color: white;
+  background: var(--primary-color);
+  color: white;
 }
 
 .export-button:hover {
-    background: var(--secondary-color);
-    transform: translateY(-1px);
+  background: var(--secondary-color);
+  transform: translateY(-1px);
 }
 
 .close-button {
-    background: #f0f0f0;
-    color: var(--text-color);
+  background: #f0f0f0;
+  color: var(--text-color);
 }
 
 .close-button:hover {
-    background: #e0e0e0;
-    transform: translateY(-1px);
+  background: #e0e0e0;
+  transform: translateY(-1px);
 }
 
 /* === 等级分详情按钮 === */
 #rating-details-button {
-    background: none;
-    border: none;
-    color: var(--primary-color);
-    font-size: 0.95em;
-    font-weight: bold;
-    cursor: pointer;
-    padding: 0 0 0 5px;
-    margin-left: 5px;
-    opacity: 0.8;
-    transition: opacity var(--duration-fast), transform var(--duration-fast);
-    line-height: 1;
-    vertical-align: middle;
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-size: 0.95em;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0 0 0 5px;
+  margin-left: 5px;
+  opacity: 0.8;
+  transition:
+    opacity var(--duration-fast),
+    transform var(--duration-fast);
+  line-height: 1;
+  vertical-align: middle;
 }
 
 #rating-details-button:hover {
-    opacity: 1;
-    transform: scale(1.1);
+  opacity: 1;
+  transform: scale(1.1);
 }
 
 /* === 响应式适配 === */
 @media (max-width: 480px) {
-    .rating-button-container {
-        flex-direction: column;
-    }
+  .rating-button-container {
+    flex-direction: column;
+  }
 
-    .modal-button {
-        width: 100%;
-    }
+  .modal-button {
+    width: 100%;
+  }
 }

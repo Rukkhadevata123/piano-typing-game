@@ -4,112 +4,116 @@
 
 /* === 基础卡片样式 === */
 .info-card {
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: var(--border-radius);
-    padding: var(--spacing);
-    box-shadow: var(--shadow-light);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    transition: all var(--duration-normal) ease;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--border-radius);
+  padding: var(--spacing);
+  box-shadow: var(--shadow-light);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all var(--duration-normal) ease;
 }
 
 .info-card:hover {
-    box-shadow: var(--shadow-medium);
-    transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+  transform: translateY(-2px);
 }
 
 /* === 统计卡片网格 === */
 .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-small);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-small);
 }
 
 .stat-card {
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: var(--border-radius);
-    padding: var(--spacing);
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    transition: all var(--duration-normal) ease;
-    cursor: default;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: var(--border-radius);
+  padding: var(--spacing);
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all var(--duration-normal) ease;
+  cursor: default;
 }
 
 .stat-card:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-medium);
-    background: rgba(255, 255, 255, 0.95);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+  background: rgba(255, 255, 255, 0.95);
 }
 
 /* === 统计值样式 === */
 .stat-value {
-    display: block;
-    font-size: var(--font-size-large);
-    font-weight: 700;
-    margin-bottom: var(--spacing-small);
-    color: var(--primary-color);
+  display: block;
+  font-size: var(--font-size-large);
+  font-weight: 700;
+  margin-bottom: var(--spacing-small);
+  color: var(--primary-color);
 }
 
 .stat-label {
-    font-size: var(--font-size-small);
-    color: var(--text-light);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+  font-size: var(--font-size-small);
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 /* === 特殊统计卡片颜色 === */
-.stat-card[data-stat="score"] .stat-value {
-    color: var(--primary-color);
+.stat-card[data-stat='score'] .stat-value {
+  color: var(--primary-color);
 }
 
-.stat-card[data-stat="combo"] .stat-value {
-    color: var(--error-color);
+.stat-card[data-stat='combo'] .stat-value {
+  color: var(--error-color);
 }
 
-.stat-card[data-stat="accuracy"] .stat-value {
-    color: var(--success);
+.stat-card[data-stat='accuracy'] .stat-value {
+  color: var(--success);
 }
 
-.stat-card[data-stat="timer"] .stat-value {
-    color: var(--accent);
+.stat-card[data-stat='timer'] .stat-value {
+  color: var(--accent);
 }
 
-.stat-card[data-stat="cps"] .stat-value {
-    color: var(--secondary-color);
+.stat-card[data-stat='cps'] .stat-value {
+  color: var(--secondary-color);
 }
 
 /* === 信息卡片 === */
 .info-card h3 {
-    margin: 0 0 var(--spacing) 0;
-    color: var(--text-color);
-    font-size: var(--font-size-base);
-    font-weight: 600;
-    border-bottom: 2px solid var(--primary-color);
-    padding-bottom: var(--spacing-small);
+  margin: 0 0 var(--spacing) 0;
+  color: var(--text-color);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: var(--spacing-small);
 }
 
 /* === 等级信息卡片 === */
 .rating-card {
-    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(155, 89, 182, 0.1));
+  background: linear-gradient(
+    135deg,
+    rgba(52, 152, 219, 0.1),
+    rgba(155, 89, 182, 0.1)
+  );
 }
 
 /* === 历史记录卡片 === */
 .history-card {
-    flex: 1;
-    max-height: 200px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+  flex: 1;
+  max-height: 200px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .history-stats {
-    flex: 1;
-    overflow-y: auto;
+  flex: 1;
+  overflow-y: auto;
 }
 
 /* === 控制按钮卡片 === */
 .controls-card {
-    background: transparent;
-    border: none;
-    box-shadow: none;
-    padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
 }

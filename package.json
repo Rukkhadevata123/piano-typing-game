@@ -1,28 +1,19 @@
 {
   "name": "piano-typing-game",
   "private": true,
-  "version": "1.6.0",
+  "version": "2.0.0",
   "description": "A 6K piano typing game simulator built with modern web technologies",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "lint": "eslint src/js/**/*.js",
-    "lint:fix": "eslint src/js/**/*.js --fix",
-    "format": "prettier --write src/js/**/*.js"
+    "dev": "npm run lint && vite",
+    "build": "npm run lint && vite build",
+    "lint": "eslint src/js/**/*.js --fix && prettier --write src/js/**/*.js src/css/**/*.css *.html"
   },
   "devDependencies": {
-    "@eslint/js": "^9.21.0",
-    "eslint": "^9.21.0",
-    "eslint-config-google": "^0.14.0",
-    "eslint-config-prettier": "^10.0.1",
-    "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-jsdoc": "^50.6.3",
-    "eslint-plugin-prettier": "^5.2.3",
-    "globals": "^16.0.0",
-    "prettier": "^3.5.2",
-    "terser": "^5.39.0",
-    "vite": "^6.1.0"
+    "@eslint/js": "^9.29.0",
+    "eslint": "^9.29.0",
+    "globals": "^16.2.0",
+    "prettier": "^3.5.3",
+    "vite": "^6.3.5"
   }
 }

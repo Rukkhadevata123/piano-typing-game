@@ -4,64 +4,64 @@
 
 /* === 统计卡片更新动画 === */
 .stat-card.updated {
-    transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 6px 16px rgba(52, 152, 219, 0.3);
-    background: rgba(255, 255, 255, 1);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 16px rgba(52, 152, 219, 0.3);
+  background: rgba(255, 255, 255, 1);
 }
 
 /* === 倍率显示样式 - 对应UIManager.js中的multiplier元素 === */
 .multiplier {
-    display: block;
-    font-size: var(--font-size-small);
-    margin-top: 4px;
-    padding: 2px 6px;
-    border-radius: 4px;
-    background: rgba(255, 255, 255, 0.1);
-    transition: all var(--duration-normal) var(--animation-timing);
-    text-align: center;
-    font-weight: 500;
+  display: block;
+  font-size: var(--font-size-small);
+  margin-top: 4px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all var(--duration-normal) var(--animation-timing);
+  text-align: center;
+  font-weight: 500;
 }
 
 .multiplier.normal {
-    color: var(--text-light);
-    background: rgba(0, 0, 0, 0.05);
+  color: var(--text-light);
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .multiplier.good {
-    color: var(--success);
-    font-weight: bold;
-    background: rgba(39, 174, 96, 0.1);
+  color: var(--success);
+  font-weight: bold;
+  background: rgba(39, 174, 96, 0.1);
 }
 
 .multiplier.excellent {
-    color: var(--error-color);
-    font-weight: bold;
-    text-shadow: 0 0 2px var(--error-color);
-    background: rgba(231, 76, 60, 0.1);
+  color: var(--error-color);
+  font-weight: bold;
+  text-shadow: 0 0 2px var(--error-color);
+  background: rgba(231, 76, 60, 0.1);
 }
 
 /* === 倍率变化特效 - 对应UIManager.js中的动画类 === */
 .multiplier.pulse-up {
-    animation: pulseUp var(--duration-normal) ease-out;
+  animation: pulseUp var(--duration-normal) ease-out;
 }
 
 .multiplier.pulse-down {
-    animation: pulseDown var(--duration-normal) ease-out;
+  animation: pulseDown var(--duration-normal) ease-out;
 }
 
 /* === 等级分详情按钮样式 === */
 #player-rating button {
-    background: none;
-    border: none;
-    color: var(--primary-color);
-    font-size: 0.9em;
-    cursor: pointer;
-    padding: 2px 6px;
-    border-radius: 3px;
-    transition: all var(--duration-fast) ease;
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-size: 0.9em;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 3px;
+  transition: all var(--duration-fast) ease;
 }
 
 #player-rating button:hover {
-    background: rgba(52, 152, 219, 0.1);
-    transform: scale(1.1);
+  background: rgba(52, 152, 219, 0.1);
+  transform: scale(1.1);
 }

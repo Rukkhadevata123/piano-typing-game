@@ -1,5 +1,5 @@
 /**
- * 主UI控制器 - 整合UIManager和GameRenderer的功能
+ * 主UI控制器
  */
 import { BoardRenderer } from './BoardRenderer.js';
 import { NotificationSystem } from './NotificationSystem.js';

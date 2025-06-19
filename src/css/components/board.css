@@ -4,59 +4,59 @@
 
 /* 游戏棋盘容器 */
 #game-board {
-    display: grid;
-    grid-template-columns: repeat(6, var(--cell-size));
-    gap: var(--grid-gap);
-    margin: 0 auto;
-    padding: var(--spacing);
-    background: var(--board-background);
-    border-radius: var(--border-radius);
-    width: fit-content;
-    box-shadow: var(--shadow-light);
-    justify-self: center;
+  display: grid;
+  grid-template-columns: repeat(6, var(--cell-size));
+  gap: var(--grid-gap);
+  margin: 0 auto;
+  padding: var(--spacing);
+  background: var(--board-background);
+  border-radius: var(--border-radius);
+  width: fit-content;
+  box-shadow: var(--shadow-light);
+  justify-self: center;
 }
 
 /* 行容器 */
 .row {
-    display: contents;
+  display: contents;
 }
 
 /* 基础单元格样式 */
 .cell {
-    width: var(--cell-size);
-    height: var(--cell-size);
-    background: var(--container-background);
-    border-radius: var(--border-radius);
-    position: relative;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-    user-select: none;
-    transition: all var(--animation-speed) var(--animation-timing);
-    transform-origin: top center;
-    will-change: transform;
+  width: var(--cell-size);
+  height: var(--cell-size);
+  background: var(--container-background);
+  border-radius: var(--border-radius);
+  position: relative;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  transition: all var(--animation-speed) var(--animation-timing);
+  transform-origin: top center;
+  will-change: transform;
 }
 
-/* 下落动画 - 使用animations.css中定义的动画 */
+/* 下落动画 */
 .cell.dropping {
-    animation: dropAnimation 0.3s ease-out;
-    animation-fill-mode: both;
-    transform: translateZ(0);
-    will-change: transform, opacity;
+  animation: dropAnimation 0.3s ease-out;
+  animation-fill-mode: both;
+  transform: translateZ(0);
+  will-change: transform, opacity;
 }
 
 /* 填充状态 */
 .cell.filled {
-    background-color: var(--cell-color, var(--primary-color));
-    box-shadow: var(--shadow-light);
-    transform: translate3d(0, -2px, 0);
-    will-change: transform;
+  background-color: var(--cell-color, var(--primary-color));
+  box-shadow: var(--shadow-light);
+  transform: translate3d(0, -2px, 0);
+  will-change: transform;
 }
 
 .cell:hover {
-    transform: translate3d(0, -1px, 0) scale(1.02);
+  transform: translate3d(0, -1px, 0) scale(1.02);
 }
 
 .cell:active {
-    opacity: 0.7;
-    transform: translate3d(0, 1px, 0) scale(0.98);
+  opacity: 0.7;
+  transform: translate3d(0, 1px, 0) scale(0.98);
 }
